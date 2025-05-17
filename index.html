@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115會考倒數計時器</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="gradient-circle circle-1"></div>
+    <div class="gradient-circle circle-2"></div>
+    <div class="gradient-circle circle-3"></div>
+    
+    <header class="header">
+        <div class="theme-section">
+            <div class="mode-switcher">
+                <button id="mode-toggle" title="切換深淺模式">
+                    <i class="fas fa-moon" id="mode-icon"></i>
+                </button>
+            </div>
+            <div class="theme-switcher">
+                <span class="theme-label">主題</span>
+                <div class="theme-options">
+                    <button class="theme-btn blue active" data-theme="blue"><span></span></button>
+                    <button class="theme-btn purple" data-theme="purple"><span></span></button>
+                    <button class="theme-btn green" data-theme="green"><span></span></button>
+                    <button class="theme-btn orange" data-theme="orange"><span></span></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-button">
+            <span class="menu-icon">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </span>
+        </div>
+    </header>
+    
+    <div class="fullscreen-menu">
+        <button class="close-menu-btn" title="關閉菜單">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>速查連結</h2>
+            </div>
+            <div class="menu-links">
+                <a href="https://tcte.onrender.com/" target="_blank" class="menu-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span>統測倒數</span>
+                </a>
+                <a href="https://ceecc.vercel.app/" target="_blank" class="menu-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <span>學測倒數</span>
+                </a>
+                <a href="https://ceeecc.vercel.app/" target="_blank" class="menu-item">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <span>分科倒數</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <main class="main-container">
+        <section class="title-section">
+            <h1 class="main-title">115會考<span class="accent-text">倒數計時</span></h1>
+            <div class="title-decoration">
+                <div class="line-decoration"></div>
+                <div class="dot-decoration"></div>
+                <div class="line-decoration"></div>
+            </div>
+        </section>
+        
+        <section class="countdown-section">
+            <div class="countdown-items">
+                <div class="countdown-item">
+                    <div class="digit-card">
+                        <div class="digit-inner">
+                            <span id="days">00</span>
+                        </div>
+                        <div class="card-reflection"></div>
+                    </div>
+                    <span class="label">天</span>
+                </div>
+                <div class="countdown-item">
+                    <div class="digit-card">
+                        <div class="digit-inner">
+                            <span id="hours">00</span>
+                        </div>
+                        <div class="card-reflection"></div>
+                    </div>
+                    <span class="label">時</span>
+                </div>
+                <div class="countdown-item">
+                    <div class="digit-card">
+                        <div class="digit-inner">
+                            <span id="minutes">00</span>
+                        </div>
+                        <div class="card-reflection"></div>
+                    </div>
+                    <span class="label">分</span>
+                </div>
+                <div class="countdown-item">
+                    <div class="digit-card">
+                        <div class="digit-inner">
+                            <span id="seconds">00</span>
+                        </div>
+                        <div class="card-reflection"></div>
+                    </div>
+                    <span class="label">秒</span>
+                </div>
+            </div>
+            
+            <div class="progress-info">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                    <div class="progress-percent-container">
+                        <span id="progress-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exam-date">
+                <i class="far fa-calendar-alt"></i>
+                <p>考試日期：2026年5月23日 - 24日</p>
+            </div>
+        </section>
+        
+        <section class="ad-section">
+            <div class="ad-container">
+                <div class="ad-header">
+                    <h3>實用升學資源</h3>
+                </div>
+                <div class="ad-content">
+                    <div class="ad-text">
+                        <h4>全國會考落點分析</h4>
+                        <p>精準分析，助您選擇最適合的理想學校</p>
+                        <ul class="ad-features">
+                            <li>全方位數據評估</li>
+                            <li>歷年趨勢分析</li>
+                            <li>各區域學校比較</li>
+                            <li>精準志願選填建議</li>
+                        </ul>
+                        <a href="https://rcpett.vercel.app/" target="_blank" class="ad-button">
+                            立即查詢
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="ad-image">
+                        <div class="image-container">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="quote-section">
+            <div class="quote-container">
+                <i class="fas fa-quote-left"></i>
+                <p id="quote-text">加油！堅持就是勝利！</p>
+                <button id="new-quote-btn" title="換一句"><i class="fas fa-sync-alt"></i></button>
+            </div>
+        </section>
+        
+        <section class="features-section">
+            <div class="feature-card study-tips-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>備考小貼士</h3>
+                </div>
+                <div class="card-content">
+                    <p class="card-description">查看實用的會考備考小貼士，幫助您制定有效的學習計畫。</p>
+                    <button class="popup-trigger" id="tips-trigger">
+                        <span>查看貼士</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="feature-card key-dates-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>重要日期</h3>
+                </div>
+                <div class="card-content">
+                    <p class="card-description">了解會考相關的重要時間點，確保不錯過任何關鍵日期。</p>
+                    <button class="popup-trigger" id="dates-trigger">
+                        <span>查看日期</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>© <span id="current-year"></span> 115會考倒數計時器. 版權所有.</p>
+    </footer>
+    
+    <!-- 彈出視窗 -->
+    <div class="popup-overlay" id="tips-popup">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3><i class="fas fa-lightbulb"></i> 備考小貼士</h3>
+                <button class="popup-close" title="關閉">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-content">
+                <ul class="tips-list" id="tips-list">
+                    <li>建立讀書計劃，合理分配時間</li>
+                    <li>掌握核心概念，不必死記硬背</li>
+                    <li>定期複習，避免遺忘曲線</li>
+                    <li>做好筆記，整理重點</li>
+                    <li>適當休息，保持身心健康</li>
+                </ul>
+                <button id="new-tips-btn" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>換一批貼士</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="dates-popup">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3><i class="fas fa-calendar-check"></i> 重要日期</h3>
+                <button class="popup-close" title="關閉">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="date-chip">2025/12/15</div>
+                        <div class="date-info">115會考報名開始</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date-chip">2026/01/15</div>
+                        <div class="date-info">115會考報名截止</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date-chip">2026/04/15</div>
+                        <div class="date-info">准考證寄發</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date-chip highlight">2026/05/23-24</div>
+                        <div class="date-info">會考日期</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date-chip">2026/06/10</div>
+                        <div class="date-info">成績公布</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
